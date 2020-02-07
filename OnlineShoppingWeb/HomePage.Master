@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomePage.master.cs" Inherits="OnlineShoppingWeb.HomePage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server"> 
+    <div>
+        <div>
+                <h1>Online Shopping</h1>
+                <asp:HyperLink ID="linkSignIn" runat="server" Text="Login" NavigateUrl="~/LoginPage.aspx" ></asp:HyperLink>
+                <asp:HyperLink ID="linkSignUp" runat="server" Text="Sign Up" NavigateUrl="~/SignupPage.aspx"></asp:HyperLink>
+            </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

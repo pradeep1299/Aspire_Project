@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShoppingWeb", "OnlineShoppingWeb\OnlineShoppingWeb.csproj", "{8C49838A-06A3-44D8-B267-88B93BE64813}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShoppingReference", "OnlineShoppingReference\OnlineShoppingReference.csproj", "{D81913D6-9BE9-4633-AADC-B9F8B453223B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C49838A-06A3-44D8-B267-88B93BE64813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C49838A-06A3-44D8-B267-88B93BE64813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C49838A-06A3-44D8-B267-88B93BE64813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C49838A-06A3-44D8-B267-88B93BE64813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81913D6-9BE9-4633-AADC-B9F8B453223B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81913D6-9BE9-4633-AADC-B9F8B453223B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81913D6-9BE9-4633-AADC-B9F8B453223B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81913D6-9BE9-4633-AADC-B9F8B453223B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
