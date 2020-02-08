@@ -10,7 +10,7 @@
 namespace OnlineShoppingWeb {
     
     
-    public partial class GridPage {
+    public partial class ProductList {
         
         /// <summary>
         /// ProductTable control.

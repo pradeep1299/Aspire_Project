@@ -17,7 +17,6 @@ namespace OnlineShoppingWeb
             string mobileNo = mobile.Text;
             string emailId = email.Text;
             string password = repassword.Text;
-            
 
             CreateAccountReference create = new CreateAccountReference();
             CustomerDetails get = new CustomerDetails(customerName, mobileNo, emailId, password);

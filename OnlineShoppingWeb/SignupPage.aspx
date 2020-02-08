@@ -10,7 +10,7 @@
             <tr>
                 <td>Name</td>
                 <td>
-                    <asp:TextBox runat="server" ID="name" MaxLength="10"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="name"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="Validatorname" runat="server" ErrorMessage="Name is Required" ForeColor="Blue" ControlToValidate="name">
                     </asp:RequiredFieldValidator>
                 </td>

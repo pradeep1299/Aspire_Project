@@ -19,10 +19,9 @@ namespace OnlineShoppingWeb
             string pass = Password.Text;
             CreateAccountReference create = new CreateAccountReference();
             int row = create.LoginDetails(user,pass);
-            if (row >= 1)
+            if (row > 0)
             {
-                Response.Write("<script language='javascript'>window.alert('Login Successfully');window.location='yourpage.aspx';</script>");
-                Response.Redirect("GridPage.aspx");
+                Response.Write("<script language='javascript'>window.alert('Login Successfully');window.location='ProductList.aspx';</script>");
             }
             else
             {
