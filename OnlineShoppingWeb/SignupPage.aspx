@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/HomePage.Master" AutoEventWireup="true" CodeBehind="SignupPage.aspx.cs" Inherits="OnlineShoppingWeb.SignupPage" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/HomePage.Master" AutoEventWireup="true" CodeBehind="SignupPage.aspx.cs" Inherits="OnlineShoppingWeb.SignupPage" Trace="false" %>
 
 <asp:Content ID="contentHead" runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content ID="contentPlaceHolderSignIn" runat="server" ContentPlaceHolderID="ContentPlaceHolder">
@@ -13,6 +13,9 @@
                     <asp:TextBox runat="server" ID="name"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="Validatorname" runat="server" ErrorMessage="Name is Required" ForeColor="Blue" ControlToValidate="name">
                     </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidatorname" runat="server" ControlToValidate="name" ErrorMessage="Enter Correct Name"
+                        ForeColor="Red" ValidationExpression="^[a-zA-Z'.\s]{3,50}">
+                    </asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -44,7 +47,7 @@
                     <asp:RequiredFieldValidator ID="ValidatorPassword" runat="server" ErrorMessage="Password is Required" ForeColor="Blue" ControlToValidate="password">
                     </asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidatorPassword" runat="server" ControlToValidate="password" ErrorMessage="Enter Correct Password Format"
-                        ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"></asp:RegularExpressionValidator>
+                        ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>

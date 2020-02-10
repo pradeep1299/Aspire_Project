@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Configuration;
-using System.Data.SqlClient;
-using OnlineShoppingReference;
+using OnlineShopping_Entity;
+using OnlineShopping_Common;
+using OnlineShopping_BL;
 
 namespace OnlineShoppingWeb
 {
@@ -18,9 +18,9 @@ namespace OnlineShoppingWeb
             string emailId = email.Text;
             string password = repassword.Text;
 
-            CreateAccountReference create = new CreateAccountReference();
+            CustomerBL create = new CustomerBL();
             CustomerDetails get = new CustomerDetails(customerName, mobileNo, emailId, password);
-            int row = create.CreateAccount(get);
+            int row = create.AddCustomer(get);
             if (row >= 1)
             {
                 Response.Write("<script language='javascript'>window.alert('Registration Successfully');window.location='LoginPage.aspx';</script>");

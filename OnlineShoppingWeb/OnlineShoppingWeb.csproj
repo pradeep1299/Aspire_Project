@@ -48,8 +48,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="OnlineShoppingReference">
-      <HintPath>..\OnlineShoppingReference\bin\Debug\OnlineShoppingReference.dll</HintPath>
+    <Reference Include="OnlineShopping_Common">
+      <HintPath>..\OnlineShopping_Common\bin\Debug\OnlineShopping_Common.dll</HintPath>
+    </Reference>
+    <Reference Include="OnlineShopping_Entity">
+      <HintPath>..\OnlineShopping_Entity\bin\Debug\OnlineShopping_Entity.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -69,6 +72,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\mypic.png" />
+    <Content Include="Images\sale-tag.jpg" />
     <Content Include="OnlineShoppingDesign.css" />
     <Content Include="packages.config" />
     <Content Include="HomePage.Master" />
@@ -126,6 +131,13 @@
       <DependentUpon>StartupPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineShopping_BL\OnlineShopping_BL.csproj">
+      <Project>{2ddeb6ca-5f55-4310-af08-d17066f31cba}</Project>
+      <Name>OnlineShopping_BL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

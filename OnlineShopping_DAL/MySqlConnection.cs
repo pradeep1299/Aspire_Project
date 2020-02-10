@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Configuration;
+using System.Data.SqlClient;
 
-namespace OnlineShoppingReference
+namespace OnlineShopping_DAL
 {
     class MySqlConnection
     {

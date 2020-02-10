@@ -1,5 +1,9 @@
-﻿body{
-
+﻿body
+{
+    /*background-image:url('Images/sale-tag.jpg');*/
+    /*background-attachment:fixed;*/
+    /*background-size:cover;*/
+    background-color:burlywood;
 }
 table.center
 {

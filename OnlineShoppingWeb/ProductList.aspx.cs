@@ -1,13 +1,16 @@
 ﻿using System;
-using OnlineShoppingReference;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using OnlineShopping_Entity;
+using OnlineShopping_Common;
+using OnlineShopping_BL;
+using System.Data;
 
 namespace OnlineShoppingWeb
 {
     public partial class ProductList : System.Web.UI.Page
     {
-        CreateAccountReference create = new CreateAccountReference();
+        ProductBL create = new ProductBL();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -17,23 +20,25 @@ namespace OnlineShoppingWeb
         }
         protected void BindData()
         {
-            create.Refreshdata(ProductTable);
+            ProductTable.DataSource = create.RefreshData();
+            ProductTable.DataBind();
+
         }
         protected void ProductTable_ListUpdate(object sender, GridViewUpdateEventArgs e)
         {
             int id = Convert.ToInt32(ProductTable.DataKeys[e.RowIndex].Values["ProductId"].ToString());
             string name = (ProductTable.Rows[e.RowIndex].FindControl("txtProductNameEdit") as TextBox).Text;
             int category = Convert.ToInt32((ProductTable.Rows[e.RowIndex].FindControl("txtCategoryIDEdit") as TextBox).Text);
-            int price = Convert.ToInt32((ProductTable.Rows[e.RowIndex].FindControl("txtPriceEdit") as TextBox).Text);
+            double price = Convert.ToDouble((ProductTable.Rows[e.RowIndex].FindControl("txtPriceEdit") as TextBox).Text);
             int stock = Convert.ToInt32((ProductTable.Rows[e.RowIndex].FindControl("txtStocksEdit") as TextBox).Text);
-            create.UpdateProductDetails(id, name, stock, category, price);
+            create.UpdateProduct(id, name, stock, category, price);
             ProductTable.EditIndex = -1;
             BindData();
         }
         protected void ProductTable_ListDelete(object sender, GridViewDeleteEventArgs e)
         {
             int id = Convert.ToInt32(ProductTable.DataKeys[e.RowIndex].Values["ProductId"].ToString());
-            create.DeleteProductDetails(id);
+            create.DeleteProduct(id);
             BindData();
         }
         protected void ProductTable_ListEdit(object sender, GridViewEditEventArgs e)
@@ -53,7 +58,7 @@ namespace OnlineShoppingWeb
             double price = Convert.ToDouble((ProductTable.FooterRow.FindControl("txtPrice") as TextBox).Text);
             int stock = Convert.ToInt32((ProductTable.FooterRow.FindControl("txtStocks") as TextBox).Text);
             ProductDetails product = new ProductDetails(name,stock,categoryId,price);
-            int row = create.InsertProductDetails(product);
+            int row = create.AddProduct(product);
             ProductTable.EditIndex = -1;
             BindData();
         }

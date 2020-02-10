@@ -1,29 +1,41 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/HomePage.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="OnlineShoppingWeb.WebForm1" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/HomePage.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs"
+    Inherits="OnlineShoppingWeb.WebForm1" Trace="false" %>
 
-<asp:content id="contentHead" runat="server" contentplaceholderid="head"></asp:content>
-<asp:content id="contentPlaceHolderSignIn" runat="server" contentplaceholderid="ContentPlaceHolder">
+<asp:Content ID="contentHead" runat="server" ContentPlaceHolderID="head"></asp:Content>
+<asp:Content ID="contentPlaceHolderSignIn" runat="server" ContentPlaceHolderID="ContentPlaceHolder">
     <link rel="stylesheet" href="OnlineShoppingDesign.css" />
-<table class="center">
-    <p style="text-align: center">LOGIN PAGE</p>
-    <tr>
-        <td>Username</td>
-        <td class="place">
-            <asp:textbox runat="server" id="Username" ></asp:textbox>
-        </td>
-    </tr>
-    <tr>
-        <td>Password</td>
-        <td>
-            <asp:textbox runat="server" id="Password" textmode="Password"></asp:textbox>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <asp:button runat="server" id="Signup" text="SignUp" onclick="Signup_Click" />
-        </td>
-        <td>
-            <asp:button runat="server" id="Sumbit" text="Login" onclick="Login_Click" />
-        </td>
-    </tr>
-</table>
-</asp:content>
+    <body>
+        <table class="center">
+            <p style="text-align: center">LOGIN PAGE</p>
+            <tr>
+                <td>Username</td>
+                <td class="place">
+                    <asp:TextBox runat="server" ID="Username"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldUsername" runat="server" ErrorMessage="Username is Required" ForeColor="Blue" 
+                        ControlToValidate="Username" ValidationGroup="ValidLogin">
+                    </asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <asp:TextBox runat="server" ID="Password" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldPassword" runat="server" ErrorMessage="Password is Required" ForeColor="Blue" 
+                        ControlToValidate="Password" ValidationGroup="ValidLogin">
+                    </asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <asp:Panel ID="DefaultLogin" runat="server" DefaultButton="Sumbit">
+                    <td>
+                        <asp:Button runat="server" ID="Signup" Text="SignUp" OnClick="Signup_Click" />
+                    </td>
+                    <td>
+                        <asp:Button runat="server" ID="Sumbit" Text="Login" OnClick="Login_Click" ValidationGroup="ValidLogin"/>
+                    </td>
+                </asp:Panel>
+
+            </tr>
+        </table>
+    </body>
+</asp:Content>

@@ -22,6 +22,15 @@ namespace OnlineShoppingWeb {
         protected global::System.Web.UI.WebControls.TextBox Username;
         
         /// <summary>
+        /// RequiredFieldUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldUsername;
+        
+        /// <summary>
         /// Password control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,24 @@ namespace OnlineShoppingWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Password;
+        
+        /// <summary>
+        /// RequiredFieldPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldPassword;
+        
+        /// <summary>
+        /// DefaultLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel DefaultLogin;
         
         /// <summary>
         /// Signup control.

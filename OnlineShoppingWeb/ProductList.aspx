@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomePage.Master" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="OnlineShoppingWeb.ProductList" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomePage.Master" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="OnlineShoppingWeb.ProductList" Trace="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -14,7 +14,7 @@
                     <asp:Label ID="LblSerial" Text='<%# Container.DataItemIndex + 1 %>' runat="server" />
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:LinkButton ID="BtInsert" Text="Insert" runat="server" OnClick="Insert_Click" />
+                    <asp:LinkButton ID="BtInsert" Text="Insert" runat="server" OnClick="Insert_Click" ValidationGroup="ValidInsert" />
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Product Id">
@@ -26,9 +26,20 @@
             <asp:TemplateField HeaderText="Product Name">
                 <FooterTemplate>
                     <asp:TextBox ID="txtProductName" runat="server" Text='<%# Bind("ProductName") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ValidatortxtProductName" runat="server" ErrorMessage="Name is Required" ForeColor="Blue" 
+                        ControlToValidate="txtProductName" ValidationGroup="ValidInsert">
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressiontxtProductName" runat="server" ControlToValidate="txtProductName" ErrorMessage="Enter Correct Name"
+                        ForeColor="Red" ValidationExpression="^[a-zA-Z'.\s]{3,50}" ValidationGroup="ValidInsert">
+                    </asp:RegularExpressionValidator>
                 </FooterTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtProductNameEdit" runat="server" Text='<%# Bind("ProductName") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ValidatortxtProductNameEdit" runat="server" ErrorMessage="Name is Required" ForeColor="Blue" ControlToValidate="txtProductNameEdit">
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressiontxtProductNameEdit" runat="server" ControlToValidate="txtProductNameEdit" ErrorMessage="Enter Correct Name"
+                        ForeColor="Red" ValidationExpression="^[a-zA-Z'.\s]{3,50}">
+                    </asp:RegularExpressionValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="LblName" Text='<%#Bind("ProductName") %>' runat="server" />
@@ -37,31 +48,64 @@
             <asp:TemplateField HeaderText="Category ID">
                 <FooterTemplate>
                     <asp:TextBox ID="txtCategoryID" runat="server" Text='<%# Bind("CategoryID") %>'/>
+                    <asp:RequiredFieldValidator ID="ValidatortxtCategoryID" runat="server" ErrorMessage="Category ID is Required" ForeColor="Blue" 
+                        ControlToValidate="txtCategoryID" ValidationGroup="ValidInsert">
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressiontxtCategoryID" runat="server" ControlToValidate="txtCategoryID" ErrorMessage="Enter Correct Category ID"
+                        ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ValidInsert">
+                    </asp:RegularExpressionValidator>
                 </FooterTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtCategoryIDEdit" runat="server" Text='<%# Bind("CategoryID") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ValidatortxtCategoryIDEdit" runat="server" ErrorMessage="Category ID is Required" ForeColor="Blue" ControlToValidate="txtCategoryIDEdit">
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressiontxtCategoryIDEdit" runat="server" ControlToValidate="txtCategoryIDEdit" ErrorMessage="Enter Correct Category ID"
+                        ForeColor="Red" ValidationExpression="^\d+$">
+                    </asp:RegularExpressionValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="LblCategoryID" Text='<%#Bind("CategoryID") %>' runat="server" />
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Price">
-                <FooterTemplate>
-                    <asp:TextBox ID="txtPrice" runat="server" Text='<%# Bind("Price") %>'></asp:TextBox>
-                </FooterTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtPriceEdit" runat="server" Text='<%# Bind("Price") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ValidatortxtPriceEdit" runat="server" ErrorMessage="Price is Required" ForeColor="Blue" ControlToValidate="txtPriceEdit">
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressiontxtPriceEdit" runat="server" ControlToValidate="txtPriceEdit" ErrorMessage="Enter Correct Price"
+                        ForeColor="Red" ValidationExpression="^\d{0,8}(\.\d{1,4})?$">
+                    </asp:RegularExpressionValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="LblPrice" Text='<%#Bind("Price") %>' runat="server" />
                 </ItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="txtPrice" runat="server" Text='<%# Bind("Price")%>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ValidatortxtPrice" runat="server" ErrorMessage="Price is Required" ForeColor="Blue" 
+                        ControlToValidate="txtPrice" ValidationGroup="ValidInsert">
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressiontxtPrice" runat="server" ControlToValidate="txtPrice" ErrorMessage="Enter Correct Price"
+                        ForeColor="Red" ValidationExpression="^\d{0,8}(\.\d{1,4})?$" ValidationGroup="ValidInsert">
+                    </asp:RegularExpressionValidator>
+                </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Stocks">
                 <FooterTemplate>
                     <asp:TextBox ID="txtStocks" runat="server" Text='<%# Bind("Stocks") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ValidatortxtStocks" runat="server" ErrorMessage="Stocks is Required" ForeColor="Blue" 
+                        ControlToValidate="txtStocks" ValidationGroup="ValidInsert">
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressiontxtStocks" runat="server" ControlToValidate="txtStocks" ErrorMessage="Enter Correct Stocks"
+                        ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ValidInsert">
+                    </asp:RegularExpressionValidator>
                 </FooterTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtStocksEdit" runat="server" Text='<%# Bind("Stocks") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ValidatortxtStocksEdit" runat="server" ErrorMessage="Stocks is Required" ForeColor="Blue" ControlToValidate="txtStocksEdit">
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressiontxtStocksEdit" runat="server" ControlToValidate="txtStocksEdit" ErrorMessage="Enter Correct Stocks"
+                        ForeColor="Red" ValidationExpression="^\d+$">
+                    </asp:RegularExpressionValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="LblStocks" Text='<%#Bind("Stocks") %>' runat="server" />
