@@ -11,7 +11,7 @@ namespace OnlineShopping_BL
         {
             customerRespository = new CustomerRespository();
         }
-        public int AddCustomer(CustomerDetails Customer)
+        public int AddCustomer(CustomerEntity Customer)
         {
             return customerRespository.CreateAccount(Customer);
         }

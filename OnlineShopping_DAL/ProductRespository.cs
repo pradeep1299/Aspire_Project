@@ -33,7 +33,7 @@ namespace OnlineShopping_DAL
             }
 
         }
-        public int InsertProductDetails(ProductDetails product)
+        public int InsertProductDetails(ProductEntity product)
         {
             using (SqlCommand command = new SqlCommand("spProductDetailsInsert", connection))
             {

@@ -14,7 +14,7 @@ namespace OnlineShoppingWeb
         protected void Registration_Click(object sender, EventArgs e)
         {
             string customerName = name.Text;
-            string mobileNo = mobile.Text;
+            long mobileNo = Convert.ToInt64(mobile.Text);
             string emailId = email.Text;
             string password = repassword.Text;
 
@@ -23,7 +23,7 @@ namespace OnlineShoppingWeb
             int row = create.AddCustomer(get);
             if (row >= 1)
             {
-                Response.Write("<script language='javascript'>window.alert('Registration Successfully');window.location='LoginPage.aspx';</script>");
+                Response.Write("<script language='javascript'>window.alert('Page Start is Start again');window.location='LoginPage.aspx';</script>");
             }
             else
             {

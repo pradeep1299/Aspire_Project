@@ -12,7 +12,7 @@ namespace OnlineShopping_BL
         {
             productRespository = new ProductRespository();
         }
-        public int AddProduct(ProductDetails product)
+        public int AddProduct(ProductEntity product)
         {
             return productRespository.InsertProductDetails(product);
         }
